@@ -14,7 +14,7 @@ DEFAULT_PATH = add_trailing_slash(os.path.dirname(SCRIPT_DIR))
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--csv_file', type=str, default='list_of_real_usa_addresses.csv', help='CSV file name')
+    parser.add_argument('-c', '--csvFile', type=str, default='list_of_real_usa_addresses.csv', help='CSV file name')
     parser.add_argument('-d', '--dataDir', type=str, default='data', help='Data directory')
     parser.add_argument('-t', '--trainSize', type=float, default=0.8, help='Training data size (in percentage) eg. 0.8')
     parser.add_argument('-v', '--devSize', type=float, default=0.1, help='Development data size (in percentage) eg. 0.1  also sets testSize')
@@ -25,7 +25,7 @@ def main():
         dataDir = args.dataDir
     else:
         dataDir = DEFAULT_PATH+args.dataDir
-    csvFile = args.csv_file
+    csvFile = args.csvFile
     csvPath = add_trailing_slash(dataDir) + csvFile
     trainSize = args.trainSize
     devSize = args.devSize
