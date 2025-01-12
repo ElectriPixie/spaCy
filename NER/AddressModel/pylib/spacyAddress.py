@@ -10,16 +10,18 @@ def add_trailing_slash(path):
 
 SCRIPT_DIR = os.path.dirname(__file__)
 DEFAULT_PATH = add_trailing_slash(os.path.dirname(SCRIPT_DIR))
+DEFAULT_MODELDIR="models/model-best"
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Load and test a spaCy model')
-    parser.add_argument('-md', '--modelDir', default='models/model-best', help='Directory containing the model')
+    parser.add_argument('-md', '--modelDir', default=DEFAULT_MODELDIR, help='Directory containing the model')
     parser.add_argument('-t', '--text', default='123 Main Street, Springfield, IL 62701', help='Text to test the model')
     return parser.parse_args()
 
 def main():
     args = parse_args()
-    if args.modelDir is not None:
+    if args.modelDir is not DEFAULT_MODELDIR:
         modelDir = args.modelDir
     else:
         modelDir = DEFAULT_PATH+args.modelDir

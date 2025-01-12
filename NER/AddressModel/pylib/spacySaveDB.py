@@ -12,23 +12,25 @@ def add_trailing_slash(path):
 
 SCRIPT_DIR = os.path.dirname(__file__)
 DEFAULT_PATH = add_trailing_slash(os.path.dirname(SCRIPT_DIR))
-
+DEFAULT_DBDIR="spaCy"
+DEFAULT_DATADIR="data"
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--dataDir', type=str, default='data', help='Data directory')
-    parser.add_argument('-db', '--dbDir', type=str, default='spaCy', help='Database directory')
+    parser.add_argument('-d', '--dataDir', type=str, default=DEFAULT_DATADIR, help='Data directory')
+    parser.add_argument('-db', '--dbDir', type=str, default=DEFAULT_DBDIR, help='Database directory')
     parser.add_argument('-tf', '--trainFile', type=str, default='spaCyTrain.json', help='Training data file')
     parser.add_argument('-vf', '--testFile', type=str, default='spaCyTest.json', help='Testing data file')
     parser.add_argument('-df', '--devFile', type=str, default='spaCyDev.json', help='Development data file')
 
     args = parser.parse_args()
 
-    if args.dataDir is not None:
+    if args.dataDir is not DEFAULT_DATADIR:
         dataDir = args.dataDir
     else:
         dataDir = DEFAULT_PATH+args.dataDir
-    if args.dataDir is not None:
+
+    if args.dataDir is not DEFAULT_DBDIR:
         dbDir = args.dbDir
     else:
         dbDir = DEFAULT_PATH+args.dbDir

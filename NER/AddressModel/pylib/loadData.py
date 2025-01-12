@@ -11,20 +11,24 @@ def add_trailing_slash(path):
 
 SCRIPT_DIR = os.path.dirname(__file__)
 DEFAULT_PATH = add_trailing_slash(os.path.dirname(SCRIPT_DIR))
+DEFAULT_DATADIR="data"
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--csvFile', type=str, default='list_of_real_usa_addresses.csv', help='CSV file name')
-    parser.add_argument('-d', '--dataDir', type=str, default='data', help='Data directory')
+    parser.add_argument('-d', '--dataDir', type=str, default=DEFAULT_DATADIR, help='Data directory')
     parser.add_argument('-t', '--trainSize', type=float, default=0.8, help='Training data size (in percentage) eg. 0.8')
     parser.add_argument('-v', '--devSize', type=float, default=0.1, help='Development data size (in percentage) eg. 0.1  also sets testSize')
     parser.add_argument('-s', '--seed', type=int, default=42, help='Random seed for reproducibility')
 
     args = parser.parse_args()
-    if args.dataDir is not None:
+    if args.dataDir is not DEFAULT_DATADIR:
         dataDir = args.dataDir
     else:
         dataDir = DEFAULT_PATH+args.dataDir
+
+    import sys
+    sys.exit(0)
     csvFile = args.csvFile
     csvPath = add_trailing_slash(dataDir) + csvFile
     trainSize = args.trainSize
