@@ -6,22 +6,18 @@ uses https://www.kaggle.com/datasets/ahmedshahriarsakib/list-of-real-usa-address
 added as data/list_of_real_usa_addresses.csv
 
 run ./sbin/loadData.sh
-
 to load and parse the data from the csv
 
 
 run ./sbin/spacySaveDB.sh
-
 to save the data as spacy formats for training and testing with
 
 
 run ./config/createBaseConfig.sh
-
 to create a base config for spacy
 
 
 run ./config/createConfig.sh
-
 to create a config from the base config
 
 
@@ -30,10 +26,8 @@ to point to the new data/spaCy/train.spacy data/spaCy/dev.spacy and data/spaCy/t
 
 
 run ./sbin/spacyTrainModel.sh 
-
 to train a new model
 
 
 run ./sbin/spacyAddress.sh 
-
 to test the newly trained model
