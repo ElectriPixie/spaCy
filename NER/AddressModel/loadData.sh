@@ -6,6 +6,7 @@ dataDir="data"
 trainSize="0.8"
 devSize="0.1"
 seed="42"
+help="False"
 
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
@@ -30,6 +31,10 @@ while [[ $# -gt 0 ]]; do
       seed="$2"
       shift 2
       ;;
+    -h|--help)
+      help="True"
+      shift
+      ;;
     *)
       echo "Unknown argument: $1"
       exit 1
@@ -43,4 +48,5 @@ python3 pylib/loadData.py \
   -d "$dataDir" \
   -t "$trainSize" \
   -v "$devSize" \
-  -s "$seed"
+  -s "$seed" \
+  $([ "$help" = "True" ] && echo "-h")

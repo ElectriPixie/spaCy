@@ -13,18 +13,18 @@ def add_trailing_slash(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--data_dir', type=str, default='data', help='Data directory')
-    parser.add_argument('-db', '--db_dir', type=str, default='spaCy', help='Database directory')
-    parser.add_argument('-tf', '--train_file', type=str, default='spaCyTrain.json', help='Training data file')
-    parser.add_argument('-vf', '--test_file', type=str, default='spaCyTest.json', help='Testing data file')
-    parser.add_argument('-df', '--dev_file', type=str, default='spaCyDev.json', help='Development data file')
+    parser.add_argument('-db', '--dbDir', type=str, default='spaCy', help='Database directory')
+    parser.add_argument('-tf', '--trainFile', type=str, default='spaCyTrain.json', help='Training data file')
+    parser.add_argument('-vf', '--testFile', type=str, default='spaCyTest.json', help='Testing data file')
+    parser.add_argument('-df', '--devFile', type=str, default='spaCyDev.json', help='Development data file')
 
     args = parser.parse_args()
 
     dataDir = args.data_dir
-    dbDir = args.db_dir
-    trainFile = args.train_file
-    testFile = args.test_file
-    devFile = args.dev_file
+    dbDir = args.dbDir
+    trainFile = args.trainFile
+    testFile = args.testFile
+    devFile = args.devFile
 
     def process_data(data):
         DATA = []
