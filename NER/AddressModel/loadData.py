@@ -39,7 +39,7 @@ with open(csvPath, "r") as f:
         entities.append((address_idx, address_idx + len(address), "ADDRESS"))
         entities.append((city_idx, city_idx + len(city), "CITY"))
         entities.append((state_idx, state_idx + len(state), "STATE"))
-        entities.append((zip_code_idx, zip_code_idx + len(zip_code), "ZIP CODE"))
+        entities.append((zip_code_idx, zip_code_idx + len(zip_code), "ZIPCODE"))
 
         data.append((full_address, {"entities": entities}))
 
