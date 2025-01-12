@@ -19,7 +19,7 @@ run ```./config/createConfig.sh```
 to create a config from the base config
 
 
-edit the newly made config so the in the [paths] block edit ```train="" dev="" test=""``` to point to the newly created spacy files
+edit the newly made config so the in the ```[paths]``` block edit ```train="" dev="" test=""``` to point to the newly created spacy files
 to point to the new ```data/spaCy/train.spacy``` ```data/spaCy/dev.spacy``` and ```data/spaCy/test.spacy``` files
 
 
