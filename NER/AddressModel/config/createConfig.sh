@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dataDir="data/"
+dataDir="../data/"
 configDir="config/"
 baseConfigFile="spacy_base_config.cfg"
 configFile="spacy_config.cfg"
