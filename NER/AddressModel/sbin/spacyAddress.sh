@@ -1,7 +1,9 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(dirname $(readlink -f $BASH_SOURCE[0]))
+DEFAULT_PATH=$(dirname $SCRIPT_DIR)
 # Set default values
-modelDir="models"
+modelDir="${DEFAULT_PATH}/models/model-best"
 text="123 Main Street, Springfield, IL 62701"
 help="False"
 
@@ -28,7 +30,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Run the Python script with arguments
-python3 pylib/spacyAddress.py \
+python3 ${DEFAULT_PATH}/pylib/spacyAddress.py \
   -md "$modelDir" \
   -t "$text" \
   $([ "$help" = "True" ] && echo "-h")

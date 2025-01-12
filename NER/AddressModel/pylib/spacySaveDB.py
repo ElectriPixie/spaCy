@@ -10,9 +10,13 @@ def add_trailing_slash(path):
         path += '/'
     return path
 
+SCRIPT_DIR = os.path.dirname(__file__)
+DEFAULT_PATH = add_trailing_slash(os.path.dirname(SCRIPT_DIR))
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--data_dir', type=str, default='data', help='Data directory')
+    parser.add_argument('-d', '--dataDir', type=str, default='data', help='Data directory')
     parser.add_argument('-db', '--dbDir', type=str, default='spaCy', help='Database directory')
     parser.add_argument('-tf', '--trainFile', type=str, default='spaCyTrain.json', help='Training data file')
     parser.add_argument('-vf', '--testFile', type=str, default='spaCyTest.json', help='Testing data file')
@@ -20,8 +24,15 @@ def main():
 
     args = parser.parse_args()
 
-    dataDir = args.data_dir
-    dbDir = args.dbDir
+    if args.dataDir is not None:
+        dataDir = args.dataDir
+    else:
+        dataDir = DEFAULT_PATH+args.dataDir
+    if args.dataDir is not None:
+        dbDir = args.dbDir
+    else:
+        dbDir = DEFAULT_PATH+args.dbDir
+
     trainFile = args.trainFile
     testFile = args.testFile
     devFile = args.devFile

@@ -1,10 +1,13 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(dirname $(readlink -f $BASH_SOURCE[0]))
+DEFAULT_PATH=$(dirname $SCRIPT_DIR)
+
 # Set default values
-dataDir="data/"
+dataDir="${DEFAULT_PATH}/data/"
 configDir="config/"
 configFile="spacy_config.cfg"
-modelDir="models/"
+modelDir="${DEFAULT_PATH}/models/"
 
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do

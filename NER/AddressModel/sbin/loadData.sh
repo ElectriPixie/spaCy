@@ -1,8 +1,11 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(dirname $(readlink -f $BASH_SOURCE[0]))
+DEFAULT_PATH=$(dirname $SCRIPT_DIR)
+
 # Set default values
 csvFile="list_of_real_usa_addresses.csv"
-dataDir="data"
+dataDir="${DEFAULT_PATH}/data"
 trainSize="0.8"
 devSize="0.1"
 seed="42"
@@ -43,7 +46,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Run the Python script with arguments
-python3 pylib/loadData.py \
+python3 ${DEFAULT_PATH}/pylib/loadData.py \
   -c "$csvFile" \
   -d "$dataDir" \
   -t "$trainSize" \

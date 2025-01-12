@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_DIR=$(dirname $(readlink -f $BASH_SOURCE[0]))
+DEFAULT_PATH=$(dirname $SCRIPT_DIR)
 # Set default values
 dataDir="data"
 dbDir="spaCy"
@@ -11,7 +13,7 @@ help="False"
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
   case $1 in
-    -d|--data_dir)
+    -d|--dataDir)
       dataDir="$2"
       shift 2
       ;;
@@ -43,7 +45,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Run the Python script with arguments
-python3 pylib/spacySaveDB.py \
+python3 ${DEFAULT_PATH}/pylib/spacySaveDB.py \
   -d "$dataDir" \
   -db "$dbDir" \
   -tf "$trainFile" \
