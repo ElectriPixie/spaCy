@@ -27,8 +27,6 @@ def main():
     else:
         dataDir = DEFAULT_PATH+args.dataDir
 
-    import sys
-    sys.exit(0)
     csvFile = args.csvFile
     csvPath = add_trailing_slash(dataDir) + csvFile
     trainSize = args.trainSize
