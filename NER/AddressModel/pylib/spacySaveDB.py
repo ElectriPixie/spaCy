@@ -14,7 +14,6 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--data_dir', type=str, default='data', help='Data directory')
     parser.add_argument('-db', '--db_dir', type=str, default='spaCy', help='Database directory')
-    parser.add_argument('-m', '--model', type=str, default='address', help='Model name')
     parser.add_argument('-tf', '--train_file', type=str, default='spaCyTrain.json', help='Training data file')
     parser.add_argument('-vf', '--test_file', type=str, default='spaCyTest.json', help='Testing data file')
     parser.add_argument('-df', '--dev_file', type=str, default='spaCyDev.json', help='Development data file')
@@ -23,7 +22,6 @@ def main():
 
     dataDir = args.data_dir
     dbDir = args.db_dir
-    model = args.model
     trainFile = args.train_file
     testFile = args.test_file
     devFile = args.dev_file
