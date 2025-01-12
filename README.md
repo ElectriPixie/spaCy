@@ -5,7 +5,7 @@ spaCy examples
 uses https://www.kaggle.com/datasets/ahmedshahriarsakib/list-of-real-usa-addresses/ for a default dataset
 added as data/list_of_real_usa_addresses.csv
 
-run ./sbin/loadData.sh
+run ```./sbin/loadData.sh```
 to load and parse the data from the csv
 
 
