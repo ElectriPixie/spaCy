@@ -1,7 +1,7 @@
 # spaCy
 ## spaCy examples
 
-[NER/AddressModel]
+### [NER/AddressModel]
 
 uses https://www.kaggle.com/datasets/ahmedshahriarsakib/list-of-real-usa-addresses/ for a default dataset
 added as ```data/list_of_real_usa_addresses.csv```
