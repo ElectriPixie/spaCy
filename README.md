@@ -1,5 +1,5 @@
 # spaCy
-spaCy examples
+## spaCy examples
 
 [NER/AddressModel]
 
